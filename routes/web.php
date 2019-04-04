@@ -11,11 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'HomeController@index');
 
-Route::get('/product', function () {
+Route::get('/product/{slug}', function () {
     return view('product');
 });
 
