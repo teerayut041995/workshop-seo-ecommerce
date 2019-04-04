@@ -5,6 +5,11 @@ hr.white-line {
     margin-bottom: 1rem;
   }
 
+hr.dark-line {
+    border-top: 2px solid #1d1919;
+    margin-bottom: 1rem;
+}
+
 .btn i.move-in-right {
     transform: translateX(-20px);
     opacity: 0;

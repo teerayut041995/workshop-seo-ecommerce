@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>@yield('title')</title>
+    <link rel="shortcut icon" href="images/Asset.png" />
+
     <link href="{{asset('template/MDBootstrap/css/bootstrap.css')}}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="{{asset('template/MDBootstrap/css/mdb.css')}}" rel="stylesheet">
@@ -21,7 +23,7 @@
     <link rel="stylesheet" href="{{asset('template/MDBootstrap/css/addons/datatables.min.css')}}">
     <link rel="stylesheet" href="{{asset('template/MDBootstrap/css/addons/datatables-select.min.css')}}">
     <!-- bootstrap wysihtml5 - text editor -->
-    <link rel="stylesheet" href="{{asset('template/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}">
+    <!-- <link rel="stylesheet" href="{{asset('template/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}"> -->
     <style>
 
     </style>
@@ -32,7 +34,10 @@
         <header>
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
             <div class="container">
-            <a class="navbar-brand" href="/"><strong>SMPhone</strong></a>
+            <a class="navbar-brand" href="/">
+            <img src="images/Asset.png" height="30" class="d-inline-block align-top"
+      alt="mdb logo">
+      <strong>THIS IS PHONE</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

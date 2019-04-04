@@ -5,6 +5,7 @@
 @import './component/header.css';
 @import './component/jumbotron.css';
 @import './component/variables.css';
+@import './component/form.css';
 
 
 body {
