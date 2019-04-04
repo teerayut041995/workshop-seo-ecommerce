@@ -19,6 +19,11 @@ Route::get('/product', function () {
     return view('product');
 });
 
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+
 Route::get('/admin', function () {
     return view('welcome');
 });

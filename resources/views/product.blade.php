@@ -52,7 +52,7 @@
                 </div>
 
             </div>
-            <div class="col-md-5">
+            <div class="col-md-5 animated fadeInLeft">
                 <div class="view overlay zoom">
                     <img src="images/product-images/525fd97da0e0b5dd36c90cd3b3a0b010.jpg" class="img-fluid rounded" alt="Sample image with waves effect.">
                     <a>
@@ -61,13 +61,13 @@
                 </div>
             </div>
 
-            <div class="col-md-6">
+            <div class="col-md-6 animated fadeInRight">
                 <span><small class="text-muted">แบรนด์</small> <span class="badge badge-dark">Samsung</span> </span>
                 <h3 class="h3-responesive mt-2">ชื่อสินค้า</h3>
                 <p class="lead">รายละเอียดย่อ</p>
                 <h4 class="text-muted py-3">ราคา <span class="text-danger font-weight-bold">45,500</span> บาท</h4>
                 <p class="text-right mb-0"><small><i class="far fa-eye"></i> การเข้าดู 12 คน</small></p>
-                <button type="button" class="btn btn-dark btn-block align-self-end">หยิบใส่ตระกร้า</button>
+                <button type="button" class="btn btn-dark btn-block align-self-end"><i class="fas fa-cart-arrow-down mr-2"></i> หยิบใส่ตะกร้า</button>
             </div>
 
         </div>
