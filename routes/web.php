@@ -15,5 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/categories', 'CategoryController');
-Route::resource('/products', 'ProductController');
+Route::resource('admin/categories', 'CategoryController');
+Route::resource('admin/products', 'ProductController');
+
+Route::patch('admin/products/images/{id}', 'ProductController@insert_image');
+Route::delete('admin/products/images/{id}', 'ProductController@delete_image');

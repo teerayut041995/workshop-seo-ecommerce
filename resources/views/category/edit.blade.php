@@ -9,7 +9,7 @@
     	<div class="row">
     		<div class="col-md-12">
     			<p><br></p>
-    			<form method="post" action="{{url('/categories' , $category->id)}}">
+    			<form method="post" action="{{url('/admin/categories' , $category->id)}}">
             @method('PATCH')
     				@csrf
   					<div class="form-group">

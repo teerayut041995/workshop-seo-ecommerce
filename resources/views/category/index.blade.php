@@ -9,7 +9,7 @@
     	<div class="row">
     		<div class="col-md-12">
     			<p><br></p>
-    			<form method="post" action="{{url('/categories')}}">
+    			<form method="post" action="{{url('/admin/categories')}}">
     				@csrf
 					<div class="form-group">
 					   	<label>ชื่อหมวดหมู่</label>
@@ -42,10 +42,10 @@
                                 {{$category->category_name}}
                               </td>
                               <td>
-                                  <a href="{{url('/categories/'.$category->id.'/edit')}}" class="btn btn-success btn-sm btn-block">แก้ไข</a>
+                                  <a href="{{url('/admin/categories/'.$category->id.'/edit')}}" class="btn btn-success btn-sm btn-block">แก้ไข</a>
                               </td>
                               <td>
-                                  <form class="delete" action="{{ url('/categories', $category->id) }}" method="POST">
+                                  <form class="delete" action="{{ url('/admin/categories', $category->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
                                         <button class="btn btn-danger btn-sm btn-block">ลบ</button>

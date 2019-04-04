@@ -34,7 +34,7 @@
                             <tr>
                               <td>{{$i++}}</td>
                               <td>
-                                <a href="{{url('/products', $product->id)}}">
+                                <a href="{{url('/admin/products', $product->id)}}">
                                   {{$product->product_name}}
                                 </a>
                               </td>
@@ -48,15 +48,15 @@
                                 {{$product->product_quantity}}
                               </td>
                               <td>
-                                <a href="{{url('/products', $product->id)}}" class="btn btn-primary btn-sm btn-block">
+                                <a href="{{url('/admin/products', $product->id)}}" class="btn btn-primary btn-sm btn-block">
                                   ดูรายละเอียด
                                 </a>
                               </td>
                               <td>
-                                  <a href="{{url('/products/'.$product->id.'/edit')}}" class="btn btn-success btn-sm btn-block">แก้ไข</a>
+                                  <a href="{{url('/admin/products/'.$product->id.'/edit')}}" class="btn btn-success btn-sm btn-block">แก้ไข</a>
                               </td>
                               <td>
-                                  <form class="delete" action="{{ url('/products', $product->id) }}" method="POST">
+                                  <form class="delete" action="{{ url('/admin/products', $product->id) }}" method="POST">
                                         @method('DELETE')
                                         @csrf
                                         <button class="btn btn-danger btn-sm btn-block">ลบ</button>

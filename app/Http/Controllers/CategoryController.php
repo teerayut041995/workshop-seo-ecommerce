@@ -40,7 +40,7 @@ class CategoryController extends Controller
             'category_name' => $request->category_name
         ]);
         $category->save();
-        return redirect('/categories')->with('status','บันทึกข้อมูลเรียบร้อยแล้ว');
+        return redirect('/admin/categories')->with('status','บันทึกข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -76,7 +76,7 @@ class CategoryController extends Controller
     {
         $category->category_name = $request->category_name;
         $category->save();
-        return redirect('/categories')->with('status','แก้ไขข้อมูลเรียบร้อยแล้ว');
+        return redirect('/admin/categories')->with('status','แก้ไขข้อมูลเรียบร้อยแล้ว');
     }
 
     /**
@@ -88,6 +88,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect('/categories')->with('status','ลบข้อมูลเรียบร้อยแล้ว');
+        return redirect('/admin/categories')->with('status','ลบข้อมูลเรียบร้อยแล้ว');
     }
 }

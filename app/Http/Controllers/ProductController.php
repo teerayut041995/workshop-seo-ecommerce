@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\ProductImage;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -55,7 +56,7 @@ class ProductController extends Controller
             'category_id' => $request->category_id,
         ]);
         $product->save();
-        return redirect('/products')->with('status', 'บันทึกข้อมูลสินค้าเรียบร้อยแล้ว');
+        return redirect('/admin/products')->with('status', 'บันทึกข้อมูลสินค้าเรียบร้อยแล้ว');
     }
 
     /**
@@ -77,7 +78,8 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Category::all();
+        return view('product.edit' , compact('product','categories'));
     }
 
     /**
@@ -89,7 +91,25 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        if ($request->file('product_image') == '') {
+            $image_name = $request->get('product_image_old');
+        } else {
+            $image = $request->file('product_image');
+            $image_name = md5(rand()*time()) . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('images/product'), $image_name);
+            if ($request->get('product_image_old') != '') {
+                @unlink(public_path().'/images/product/'.$request->get('product_image_old'));
+            }
+        }
+        $product->product_name = $request->product_name;
+        $product->product_image = $image_name;
+        $product->short_description = $request->short_description;
+        $product->long_description = $request->long_description;
+        $product->product_price = $request->product_price;
+        $product->product_quantity = $request->product_quantity;
+        $product->category_id = $request->category_id;
+        $product->save();
+        return redirect('/admin/products')->with('status', 'บันทึกข้อมูลสินค้าเรียบร้อยแล้ว');
     }
 
     /**
@@ -100,6 +120,42 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+    
+        foreach ($product->images as $image) {
+            if ($image->image_name != '') {
+                unlink(public_path().'/images/product-images/'.$image->image_name);
+            } 
+        }
+        $product->delete();
+        return redirect('/admin/products/')->with('status', 'ลบข้อมูลสินค้าเรียบร้อยแล้ว');
+                
+    }
+
+    public function insert_image(Request $request, $id)
+    {
+        if ($request->file('image_name') != '') {
+            $file_image = $request->file('image_name');
+            $image_name = md5(rand()*time()) . '.' . $file_image->getClientOriginalExtension();
+            $file_image->move(public_path('images/product-images'), $image_name);
+        } else {
+            $image_name = "";
+        }
+        $product = new ProductImage([
+            'image_name' => $image_name,
+            'product_id' => $id,
+        ]);
+        $product->save();
+        return redirect('/admin/products/'.$id)->with('status', 'เพิ่มรูปภาพสินค้าเรียบร้อยแล้ว');
+    }
+
+    public function delete_image($id)
+    {
+        $image = ProductImage::find($id);
+        $product_id = $image->product_id;
+        if ($image->image_name != '') {
+            @unlink(public_path().'/images/product-images/'.$image->image_name);
+        }
+        $image->delete();
+        return redirect('/admin/products/'.$product_id)->with('status', 'ลบรูปภาพสินค้าเรียบร้อยแล้ว');
     }
 }

@@ -9,7 +9,7 @@
     	<div class="row">
     		<div class="col-md-12">
     			<p><br></p>
-    			<form method="post" action="{{url('/products')}}" enctype="multipart/form-data">
+    			<form method="post" action="{{url('/admin/products')}}" enctype="multipart/form-data">
     				@csrf
 					<div class="form-group">
 					   	<label>ชื่อสินค้า</label>

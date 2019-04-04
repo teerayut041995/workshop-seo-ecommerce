@@ -40,14 +40,14 @@
                 <a class="nav-link" href="/">หน้าแรก</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{url('/categories')}}">หมวดหมู่สินค้า</a>
+                <a class="nav-link" href="{{url('/admin/categories')}}">หมวดหมู่สินค้า</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
                   aria-expanded="false">สินค้า</a>
                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="{{url('/products')}}">ข้อมูลสินค้าทั้งหมด</a>
-                  <a class="dropdown-item" href="{{url('/products/create')}}">เพิ่มสินค้า</a>
+                  <a class="dropdown-item" href="{{url('/admin/products')}}">ข้อมูลสินค้าทั้งหมด</a>
+                  <a class="dropdown-item" href="{{url('/admin/products/create')}}">เพิ่มสินค้า</a>
                 </div>
               </li>
             </ul>
