@@ -4,6 +4,14 @@
     รายละเอียดสินค้า
 @endsection
 
+@section('style')
+<style type="text/css">
+  img {
+    width: 100%;
+  }
+</style>
+@endsection
+
 @section('content')
     <div class="container">
     	<p><br></p>
