@@ -1,0 +1,34 @@
+hr.white-line {
+    border-top: 2px solid #fff;
+    width: 3rem;
+    /* display: inline-block; */
+    margin-bottom: 1rem;
+  }
+
+.btn i.move-in-right {
+    transform: translateX(-20px);
+    opacity: 0;
+    transition: all .5s;
+}
+.btn:hover > i.move-in-right {
+    transform: translateX(5px);
+    transition-timing-function: ease-out;
+    opacity: 1;
+}
+
+.border-blue {
+    border-left: 4px solid #0d47a1;
+}
+
+.border-yellow {
+    border-left: 4px solid #FF8800;
+}
+
+.border-purple {
+    border-left: 4px solid #9933CC;
+}
+
+.border-dark {
+    border-left: 4px solid #1d1919;
+}
+

@@ -1,0 +1,43 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css?family=Athiti:300,400,500,600,700|Montserrat:400,500,600,700');
+
+/* CUSTOM */
+@import './component/header.css';
+@import './component/jumbotron.css';
+@import './component/variables.css';
+
+
+body {
+    font-family: 'Athiti', sans-serif;
+}
+
+.font-Montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.img-samsung {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.8)),
+       url('/./images/view-images/samsung.jpg');
+    /* background-image: url('../images/view-images/samsung.jpg'); */
+}
+
+.img-iphone {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.8)),
+       url('/./images/view-images/iphone.png');
+    /* background-image: url('../images/view-images/samsung.jpg'); */
+}
+
+.img-huawei {
+    background-image: linear-gradient(
+      to right bottom,
+      rgba(0, 0, 0, 0.6),
+       rgba(0, 0, 0, 0.8)),
+       url('/./images/view-images/huawei.jpg');
+    /* background-image: url('../images/view-images/samsung.jpg'); */
+}

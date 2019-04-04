@@ -1,0 +1,22 @@
+.jumbotron {
+   /* height: 60vh; */
+   background-position: center;
+   background-size: cover;
+   /* -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); */
+}
+
+.img-gray {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+     filter: grayscale(100%);
+     transition: all .5s;
+     cursor: pointer;
+}
+
+.img-gray:hover, .img-gray:focus {
+    -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+     filter: grayscale(0);
+     transform: scale(1.05);
+}
+
+

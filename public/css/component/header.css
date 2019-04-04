@@ -1,0 +1,53 @@
+.navbar {
+    background-color: transparent;
+}
+
+.navbar .nav-item {
+    margin-right:1rem;
+}
+
+.nav-flex-icons .nav-item .nav-link > i {
+    font-size:1.2rem;
+}
+
+.top-nav-collapse {
+    background-color: #1d1919;
+}
+
+.max-h {
+    max-height: 100vh;
+}
+
+.left-middle {
+    top: 50%;
+    left: 15%;
+    transform: translate(0, -50%);
+    text-align: left;
+    width: 20vw;
+}
+
+.left-bottom {
+    bottom: 20px;
+    left: 15%;
+    text-align: left;
+    width: 20vw;
+}
+
+.right-top {
+    top:10%;
+    right: 15%;
+    text-align: right;
+    width: 20vw;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: #1d1919;
+    }
+    .intro-2 {
+        margin-top:3rem;
+    }
+}
+
+

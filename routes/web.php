@@ -12,6 +12,14 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/product', function () {
+    return view('product');
+});
+
+Route::get('/admin', function () {
     return view('welcome');
 });
 
