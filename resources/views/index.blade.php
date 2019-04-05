@@ -4,6 +4,9 @@
     หน้าแรก
 @endsection
 
+@section('style')
+@endsection
+
 @section('intro')
 <div class="intro-2">
   <!--Carousel Wrapper-->
@@ -23,7 +26,7 @@
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption left-middle">
-        <span class="badge badge-danger">new</span>
+        <span class="badge badge-danger animated bounce infinite">new</span>
         <h3 class="h3-responsive font-weight-bold font-Montserrat animated fadeInLeft">SAMSUNG GALEXY S10 </h3>
         <p class="d-none d-sm-none d-md-block animated fadeInRight">ประสบการณ์จากการเป็นผู้บุกเบิกเทคโนโลยีสมาร์ทโฟนที่ยาวนานถึง 10 ปี
          ก่อให้เกิด Galaxy S10e S10 และ S10+ ซึ่งถือเป็น Next Generation ของนวัตกรรมด้านสมาร์ทโฟน</p>
@@ -37,7 +40,7 @@
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption left-bottom">
-      <span class="badge badge-danger">new</span>
+      <span class="badge badge-danger animated bounce infinite">new</span>
         <h3 class="h3-responsive font-weight-bold font-Montserrat animated fadeInLeft">OPPO FIND X</h3>
         <p class="d-none d-sm-none d-md-block animated fadeInRight">OPPO Find X สมาร์ทโฟน Panoramic Design
             รุ่นแรกของโลก ห่อหุ้มด้วยความงดงามแห่งสุนทรียภาพ
@@ -52,7 +55,7 @@
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption right-top">
-        <span class="badge badge-primary">coming soon</span>
+        <span class="badge badge-primary animated flash infinite">coming soon</span>
         <h3 class="h3-responsive font-weight-bold font-Montserrat animated fadeInRight">IPHONE XS, XR</h3>
         <p class="d-none d-sm-none d-md-block animated fadeInLeft"> พบกับ Super Retina สองขนาด โดยหนึ่งในนั้นคือจอภาพที่ใหญ่
             ที่สุดเท่าที่เคยมีมาบน iPhone แล้วยังมี Face ID ที่เร็วยิ่งขึ้น
@@ -85,7 +88,7 @@
   <div class="container">
     <div class="row wow fadeIn">
       <div class="col-md-12">
-      <h3 class="h3-reponesive font-weight-bolder text-center mb-5"><i class="fas fa-fire"></i> มาแล้ววันนี้ </h3>
+      <h3 class="h3-reponesive font-weight-bolder text-center mb-5 animated pulse infinite"><i class="fas fa-fire"></i> มาแล้ววันนี้ </h3>
       <div class="row">
           <div class="col-lg-4 col-md-6 col-sm-12">
 
@@ -406,4 +409,5 @@
 @endsection
 
 @section('script')
+
 @endsection
