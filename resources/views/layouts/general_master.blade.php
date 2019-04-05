@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <title>@yield('title')</title>
-    <link rel="shortcut icon" href="images/Asset.png" />
+    <link rel="shortcut icon" href="{{url('images/Asset.png')}}" />
 
     <link href="{{asset('template/MDBootstrap/css/bootstrap.css')}}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
@@ -35,7 +35,7 @@
             <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
             <div class="container">
             <a class="navbar-brand" href="/">
-            <img src="images/Asset.png" height="30" class="d-inline-block align-top"
+            <img src="{{url('images/Asset.png')}}" height="30" class="d-inline-block align-top"
       alt="mdb logo">
       <strong>THIS IS PHONE</strong></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"

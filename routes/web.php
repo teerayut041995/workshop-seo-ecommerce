@@ -13,9 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/product/{slug}', function () {
-    return view('product');
-});
+Route::get('/product/{slug}', 'HomeController@show');
 
 Route::get('/cart', function () {
     return view('cart');

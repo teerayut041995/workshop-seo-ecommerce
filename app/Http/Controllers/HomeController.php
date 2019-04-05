@@ -25,4 +25,9 @@ class HomeController extends Controller
 		return view('index' , compact('samsung_main','new_products','samsung_most_expensive','samsung_store','iphone_most_expensive','iphone_store' ,'huawei_most_expensive' , 'huawei_store' , 'products'));
 	}
 	
+	public function show($slug)
+	{
+		$product = Product::where('product_slug',$slug)->first();
+		return view('product' , compact('product'));
+	}
 }
