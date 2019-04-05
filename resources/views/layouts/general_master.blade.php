@@ -32,7 +32,7 @@
   <body>
       <!--Main Navigation-->
         <header>
-            <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
+            <nav id="navbar-example2" class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
             <div class="container">
             <a class="navbar-brand" href="/">
             <img src="{{url('images/Asset.png')}}" height="30" class="d-inline-block align-top"
@@ -152,9 +152,53 @@
     <script src="{{asset('template/plugins/ckeditor/ckeditor.js')}}"></script>
     <!-- <script src="{{asset('template/plugins/datatables.net/js/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('template/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js')}}"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
-    new WOW().init();
+        new WOW().init();
     </script>
+
+    <script>
+        $('a[href*="#samsung-view"]').on('click', function(e) {
+            e.preventDefault()
+            $('html, body').animate(
+                {
+                scrollTop: $($(this).attr('href')).offset().top,
+                },
+                500,
+                'linear'
+            )
+        })
+        $('a[href*="#iphone-view"]').on('click', function(e) {
+            e.preventDefault()
+            $('html, body').animate(
+                {
+                scrollTop: $($(this).attr('href')).offset().top,
+                },
+                500,
+                'linear'
+            )
+        })
+        $('a[href*="#huawei-view"]').on('click', function(e) {
+            e.preventDefault()
+            $('html, body').animate(
+                {
+                scrollTop: $($(this).attr('href')).offset().top,
+                },
+                500,
+                'linear'
+            )
+        })
+        $('a[href*="#other-view"]').on('click', function(e) {
+            e.preventDefault()
+            $('html, body').animate(
+                {
+                scrollTop: $($(this).attr('href')).offset().top,
+                },
+                500,
+                'linear'
+            )
+        })
+</script>
     @yield('script')
   </body>
 </html>
