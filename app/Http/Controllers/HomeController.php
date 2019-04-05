@@ -23,16 +23,15 @@ class HomeController extends Controller
 		$huawei_store = Product::where('category_id',9)->limit(3)->get();
 
 		$products = Product::all();
-		return view('index' , compact('samsung_main','new_products','most_expention','samsung_most_expensive','samsung_store','iphone_most_expensive','iphone_store' ,'huawei_most_expensive' , 'huawei_store' , 'products'));
+		return view('index' , compact('samsung_main','new_products','samsung_most_expensive','samsung_store','iphone_most_expensive','iphone_store' ,'huawei_most_expensive' , 'huawei_store' , 'products'));
 	}
-<<<<<<< HEAD
+
 	
 	public function show($slug)
 	{
 		$product = Product::where('product_slug',$slug)->first();
 		return view('product' , compact('product'));
 	}
-=======
 
->>>>>>> fd6feb0ac4fc44d2a190e02fb0ce275ccad51d7c
+
 }
