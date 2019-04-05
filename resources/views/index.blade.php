@@ -33,6 +33,8 @@
          <button type="button" class="btn btn-danger d-none d-sm-none d-md-block">Shop now <i class="fas fa-arrow-right ml-2"></i></button>
       </div>
     </div>
+
+    <!-- @foreach($samsung_main as $main) -->
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
@@ -51,7 +53,8 @@
     <div class="carousel-item">
       <!--Mask color-->
       <div class="view">
-        <img class="d-block w-100 max-h" src="images/view-images/iphone.png" alt="Third slide">
+        <!-- <img class="d-block w-100 max-h" src="{{url('images/product' , $main->product_image)}}" alt="{{$main->product_name}}"> -->
+        <img class="d-block w-100 max-h" src="images/view-images/iphone.png" alt="Second slide">
         <div class="mask rgba-black-light"></div>
       </div>
       <div class="carousel-caption right-top">
@@ -64,6 +67,8 @@
         <button type="button" class="btn btn-light float-right d-none d-sm-none d-md-block" disabled><i class="fas fa-arrow-left mr-2"></i> Shop now</button>
       </div>
     </div>
+    <!-- @endforeach -->
+
   </div>
   <!--/.Slides-->
   <!--Controls-->
@@ -90,14 +95,13 @@
       <div class="col-md-12">
       <h3 class="h3-reponesive font-weight-bolder text-center mb-5 animated pulse infinite"><i class="fas fa-fire"></i> มาแล้ววันนี้ </h3>
       <div class="row">
+        @foreach($new_products as $new)
           <div class="col-lg-4 col-md-6 col-sm-12">
-
           <!-- Card -->
             <div class="card">
-
                 <!-- Card image -->
-                <div class="view overlay zoom">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <div class="view img-resize overlay zoom">
+                    <img class="card-img-top" src="{{url('images/product' , $new->product_image)}}" alt="{{$new->product_name}}">
                     <div class="mask flex-center waves-effect waves-light">
                     <a href="#"><p class="white-text">View more</p></a>
                     </div>
@@ -107,20 +111,21 @@
                 <div class="card-body">
 
                 <!-- Title -->
-                <h4 class="card-title"><a>ชื่อรุ่นโทรศัพท์</a></h4>
+                <h4 class="card-title"><a>{{$new->product_name}}</a></h4>
                 <!-- Text -->
-                <p class="card-text">รายละเอียดย่อ</p>
+                <p class="card-text cut-text-multi">{{$new->short_description}}</p>
                 <!-- Button -->
-                <h4>ราคา <span class="text-danger font-weight-bolder font-Montserrat">45,500</span> บาท</h4>
-                <button type="button" class="btn btn-elegant ml-0">Shop now</button>
-
+                <h4>ราคา <span class="text-danger font-weight-bolder font-Montserrat">{{$new->product_price}}</span> บาท</h4>
+                <a href="{{url('product',$new->product_slug)}}" class="btn btn-elegant ml-0"><i class="fas fa-cart-arrow-down mr-2"></i> หยิบใส่ตะกร้า</a>
                 </div>
-
             </div>
         <!-- Card -->
-
+        <p><br></p>
           </div>
+
+        @endforeach
       </div>
+
 
       </div>
     </div>
@@ -137,18 +142,18 @@
     <div class="container">
         <div class="row py-5 img-gray">
             <div class="col-md-6 wow fadeInLeft">
-            <img src="images/S10_plus.png" class="img-fluid mx-auto d-block " alt="Responsive image">
+            <img src="{{url('images/product' , $samsung_most_expensive->product_image)}}" class="img-fluid mx-auto d-block " alt="{{$samsung_most_expensive->product_name}}">
             </div>
             <div class="col-md-6 py-2 wow fadeInRight">
-                <h3 class="h3-responesive white-text fonr-weight-bold text-uppercase">samsung galaxy S10</h3>
-                <small class="white-text">แบรนด์ : <a href="#" class="badge badge-primary">samsung</a></small>
+                <h3 class="h3-responesive white-text fonr-weight-bold text-uppercase">{{$samsung_most_expensive->product_name}}</h3>
+                <small class="white-text">แบรนด์ : <a href="#" class="badge badge-primary">{{$samsung_most_expensive->category->category_name}}</a></small>
                 <br>
                 <hr class="white-line d-inline-flex">
-                <p class="white-text">รายละเอียดย่อ</p>
+                <p class="white-text">{{$samsung_most_expensive->short_description}}</p>
 
-                <h2 class="text-primary font-weight-bolder font-Montserrat">฿ 45,500</h4>
+                <h2 class="text-primary font-weight-bolder font-Montserrat">฿ {{$samsung_most_expensive->product_price}}</h4>
 
-                <button type="button" class="btn btn-light ml-0">Shop now <i class="fas fa-arrow-circle-right move-in-right"></i></button>
+                <a href="{{url('product',$new->product_slug)}}" class="btn btn-light ml-0">Shop now <i class="fas fa-arrow-circle-right move-in-right"></i></a>
             </div>
         </div>
     </div>
@@ -160,16 +165,17 @@
   <div class="container">
     <div class="row wow fadeIn">
       <div class="col-md-12">
-      <h4 class="h4-reponesive font-weight-bolder text-uppercase font-Montserrat border-blue mb-5 pl-2"> samsung store </h4>
+      <h3 class="h3-reponesive header-main samsung mb-5 pl-2"> samsung store </h3>
       <div class="row">
+        @foreach($samsung_store as $samsung)
           <div class="col-lg-4 col-md-6 col-sm-12">
 
           <!-- Card -->
             <div class="card">
 
                 <!-- Card image -->
-                <div class="view overlay zoom">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <div class="view img-resize overlay zoom">
+                    <img class="card-img-top" src="{{url('images/product' , $samsung->product_image)}}" alt="{{$samsung->produc_name}}">
                     <div class="mask flex-center waves-effect waves-light">
                     <a href="#"><p class="white-text">View more</p></a>
                     </div>
@@ -179,19 +185,19 @@
                 <div class="card-body">
 
                 <!-- Title -->
-                <h4 class="card-title"><a>ชื่อรุ่นโทรศัพท์</a></h4>
+                <h4 class="card-title"><a>{{$samsung->product_name}}</a></h4>
                 <!-- Text -->
-                <p class="card-text">รายละเอียดย่อ</p>
+                <p class="card-text cut-text-multi">{{$samsung->short_description}}</p>
                 <!-- Button -->
-                <h4>ราคา <span class="text-primary font-weight-bolder font-Montserrat">45,500</span> บาท</h4>
-                <button type="button" class="btn btn-primary ml-0">Shop now</button>
+                <h4>ราคา <span class="text-primary font-weight-bolder font-Montserrat">{{$samsung->product_price}}</span> บาท</h4>
+                <a href="{{url('product',$samsung->product_slug)}}" class="btn btn-primary ml-0"><i class="fas fa-cart-arrow-down mr-2"></i> หยิบใส่ตะกร้า</a>
 
                 </div>
 
             </div>
         <!-- Card -->
-
           </div>
+        @endforeach
       </div>
 
       </div>
@@ -209,18 +215,18 @@
 <div class="container">
     <div class="row py-5 img-gray">
         <div class="col-md-6 wow fadeInLeft">
-        <img src="images/iphone_xs.png" class="img-fluid mx-auto d-block " alt="Responsive image">
+        <img src="{{url('images/product' , $iphone_most_expensive->product_image)}}" class="img-fluid mx-auto d-block " alt="Responsive image">
         </div>
         <div class="col-md-6 py-2 wow fadeInRight">
-            <h3 class="h3-responesive white-text fonr-weight-bold text-uppercase">iPhone XS</h3>
-            <small class="white-text">แบรนด์ : <a href="#" class="badge badge-primary">samsung</a></small>
+            <h3 class="h3-responesive white-text fonr-weight-bold text-uppercase">{{$iphone_most_expensive->product_name}}</h3>
+            <small class="white-text">แบรนด์ : <a href="#" class="badge badge-primary">{{$iphone_most_expensive->category->category_name}}</a></small>
             <br>
             <hr class="white-line d-inline-flex">
-            <p class="white-text">รายละเอียดย่อ</p>
+            <p class="white-text">{{$iphone_most_expensive->short_description}}</p>
 
-            <h2 class="text-primary font-weight-bolder font-Montserrat">฿ 45,500</h4>
+            <h2 class="text-primary font-weight-bolder font-Montserrat">฿ {{$iphone_most_expensive->product_price}}</h4>
 
-            <button type="button" class="btn btn-light ml-0">Shop now <i class="fas fa-arrow-circle-right move-in-right"></i></button>
+            <a  href="{{url('product',$samsung->product_slug)}}" class="btn btn-light ml-0">Shop now <i class="fas fa-arrow-circle-right move-in-right"></i></a>
         </div>
     </div>
 </div>
@@ -230,18 +236,19 @@
 <main class="pb-5">
 
   <div class="container">
-    <div class="row wow fadeIn">
+    <div class="row">
       <div class="col-md-12">
-      <h4 class="h4-reponesive font-weight-bolder text-uppercase font-Montserrat border-yellow mb-5 pl-2"> iphone store </h4>
-      <div class="row">
+      <h4 class="h4-reponesive header-main iphone mb-5 pl-2"> iphone store </h4>
+      <div class="row  wow fadeIn">
+          @foreach($iphone_store as $ipone)
           <div class="col-lg-4 col-md-6 col-sm-12">
 
           <!-- Card -->
             <div class="card">
 
                 <!-- Card image -->
-                <div class="view overlay zoom">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <div class="view img-resize overlay zoom">
+                    <img class="card-img-top" src="{{url('images/product' , $ipone->product_image)}}" alt="{{$ipone->produc_name}}">
                     <div class="mask flex-center waves-effect waves-light">
                     <a href="#"><p class="white-text">View more</p></a>
                     </div>
@@ -251,19 +258,19 @@
                 <div class="card-body">
 
                 <!-- Title -->
-                <h4 class="card-title"><a>ชื่อรุ่นโทรศัพท์</a></h4>
+                <h4 class="card-title"><a>{{$ipone->produc_name}}</a></h4>
                 <!-- Text -->
-                <p class="card-text">รายละเอียดย่อ</p>
+                <p class="card-text cut-text-multi">{{$ipone->short_description}}</p>
                 <!-- Button -->
-                <h4>ราคา <span class="text-warning font-weight-bolder font-Montserrat">45,500</span> บาท</h4>
-                <button type="button" class="btn btn-amber ml-0">Shop now</button>
+                <h4>ราคา <span class="pink-text font-weight-bolder font-Montserrat">{{$ipone->product_price}}</span> บาท</h4>
+                <a href="{{url('product',$ipone->product_slug)}}" class="btn btn-pink ml-0"><i class="fas fa-cart-arrow-down mr-2"></i> หยิบใส่ตะกร้า</a>
 
                 </div>
 
             </div>
         <!-- Card -->
-
           </div>
+        @endforeach
       </div>
 
       </div>
@@ -282,18 +289,18 @@
 <div class="container">
     <div class="row py-5 img-gray">
         <div class="col-md-6 wow fadeInLeft">
-        <img src="images/hua-wei_p30.png" class="img-fluid mx-auto d-block " alt="Responsive image">
+        <img src="{{url('images/product' , $huawei_most_expensive->product_image)}}" class="img-fluid mx-auto d-block " alt="{{$huawei_most_expensive->product_name}}">
         </div>
         <div class="col-md-6 py-2 wow fadeInRight">
-            <h3 class="h3-responesive white-text fonr-weight-bold text-uppercase">Huawei P30</h3>
-            <small class="white-text">แบรนด์ : <a href="#" class="badge badge-primary">samsung</a></small>
+            <h3 class="h3-responesive white-text fonr-weight-bold text-uppercase">{{$huawei_most_expensive->product_name}}</h3>
+            <small class="white-text">แบรนด์ : <a href="#" class="badge badge-primary">{{$huawei_most_expensive->category->category_name}}</a></small>
             <br>
             <hr class="white-line d-inline-flex">
-            <p class="white-text">รายละเอียดย่อ</p>
+            <p class="white-text">{{$huawei_most_expensive->short_description}}</p>
 
-            <h2 class="text-primary font-weight-bolder font-Montserrat">฿ 45,500</h4>
+            <h2 class="text-primary font-weight-bolder font-Montserrat">฿ {{$huawei_most_expensive->product_price}}</h4>
 
-            <button type="button" class="btn btn-light ml-0">Shop now <i class="fas fa-arrow-circle-right move-in-right"></i></button>
+            <a  href="{{url('product',$samsung->product_slug)}}" class="btn btn-light ml-0">Shop now <i class="fas fa-arrow-circle-right move-in-right"></i></a>
         </div>
     </div>
 </div>
@@ -305,16 +312,17 @@
   <div class="container">
     <div class="row wow fadeIn">
       <div class="col-md-12">
-      <h4 class="h4-reponesive font-weight-bolder text-uppercase font-Montserrat border-purple mb-5 pl-2"> huawei store </h4>
+      <h4 class="h4-reponesive header-main huawei mb-5 pl-2"> huawei store </h4>
       <div class="row">
+         @foreach($huawei_store as $huawei)
           <div class="col-lg-4 col-md-6 col-sm-12">
 
           <!-- Card -->
             <div class="card">
 
                 <!-- Card image -->
-                <div class="view overlay zoom">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <div class="view img-resize overlay zoom">
+                    <img class="card-img-top" src="{{url('images/product' , $huawei->product_image)}}" alt="{{$huawei->produc_name}}">
                     <div class="mask flex-center waves-effect waves-light">
                     <a href="#"><p class="white-text">View more</p></a>
                     </div>
@@ -324,19 +332,19 @@
                 <div class="card-body">
 
                 <!-- Title -->
-                <h4 class="card-title"><a>ชื่อรุ่นโทรศัพท์</a></h4>
+                <h4 class="card-title"><a>{{$huawei->product_name}}</a></h4>
                 <!-- Text -->
-                <p class="card-text">รายละเอียดย่อ</p>
+                <p class="card-text cut-text-multi">{{$huawei->short_description}}</p>
                 <!-- Button -->
-                <h4>ราคา <span class="text-secondary font-weight-bolder font-Montserrat">45,500</span> บาท</h4>
-                <button type="button" class="btn btn-purple ml-0">Shop now</button>
+                <h4>ราคา <span class="text-success font-weight-bolder font-Montserrat">{{$huawei->product_price}}</span> บาท</h4>
+                <a href="{{url('product',$ipone->product_slug)}}" class="btn btn-dark-green ml-0"><i class="fas fa-cart-arrow-down mr-2"></i> หยิบใส่ตะกร้า</a>
 
                 </div>
 
             </div>
         <!-- Card -->
-
           </div>
+        @endforeach
       </div>
 
       </div>
@@ -364,14 +372,15 @@
     <div class="row wow fadeIn">
       <div class="col-md-12">
       <div class="row">
+        @foreach($products as $product)
           <div class="col-lg-4 col-md-6 col-sm-12">
 
           <!-- Card -->
             <div class="card">
 
                 <!-- Card image -->
-                <div class="view overlay zoom">
-                    <img class="card-img-top" src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" alt="Card image cap">
+                <div class="view img-resize overlay zoom">
+                    <img class="card-img-top" src="{{url('images/product' , $product->product_image)}}" alt="{{$product->produc_name}}">
                     <div class="mask flex-center waves-effect waves-light">
                     <a href="#"><p class="white-text">View more</p></a>
                     </div>
@@ -381,19 +390,20 @@
                 <div class="card-body">
 
                 <!-- Title -->
-                <h4 class="card-title"><a>ชื่อรุ่นโทรศัพท์</a></h4>
+                <h4 class="card-title"><a>{{$product->product_name}}</a></h4>
                 <!-- Text -->
-                <p class="card-text">รายละเอียดย่อ</p>
+                <p class="card-text cut-text-multi">{{$product->short_description}}</p>
                 <!-- Button -->
-                <h4>ราคา <span class="text-danger font-weight-bolder font-Montserrat">45,500</span> บาท</h4>
-                <button type="button" class="btn btn-elegant ml-0">Shop now</button>
+                <h4>ราคา <span class="text-danger font-weight-bolder font-Montserrat">{{$product->product_price}}</span> บาท</h4>
+                <a href="{{url('product',$product->product_slug)}}" class="btn btn-elegant ml-0"><i class="fas fa-cart-arrow-down mr-2"></i> หยิบใส่ตะกร้า</a>
 
                 </div>
 
             </div>
         <!-- Card -->
-
+          <p><br></p>
           </div>
+        @endforeach
       </div>
 
       </div>
